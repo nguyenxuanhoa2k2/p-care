@@ -6,9 +6,20 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: white;
+  /* color: 'red'; */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.leaflet-container{
+ 
+  height: 100vh;
+  
+  margin: 50px 400px 50px 400px; 
+
+  
+}
+ 

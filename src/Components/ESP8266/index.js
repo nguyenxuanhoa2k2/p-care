@@ -95,54 +95,76 @@ const APPESP = () => {
       <div>
         <h1 class='namegr'> P-CARE </h1>
         <h2 class='ten'>MAX30100 - GPS </h2>
-        <div style={{ color: 'red' }}>
-          <div class='container mt-5'>
-            <div class='row'>
+          <div class='container'>
+
+          <div class= "heath_info">
+
+            <div class='col-sm-6'>
               <div class='card'>
                 <div class='label'> HEARTRATE</div>
-                {/* <div class='value'>{HeartRate[0]}</div> */}
+                <div class='value'>{HeartRate[0]}</div>
                 <div class='label'>BPM</div>
               </div>
-            </div>
+
+
             <div class='col-sm-6'>
               <div class='card'>
                 <div class='label'>SPO2</div>
-                {/* <div class='value'>{SpO2[0]}</div> */}
+                <div class='value'>{SpO2[0]}</div>
                 <div class='label'>%</div>
               </div>
             </div>
-            <div class='col-sm-6'>
+
+            </div>
+          </div>
+          
+          
+            <div class = "chart">
+
+              <div class = "chart_info">
+                <ChartData data={HeartRate} />
+              </div>
+
+              <div class = "chart_info">
+                <ChartData data={SpO2} />
+              </div>
+
+            </div>
+
+
+            {/* <div class='col-sm-6'>
               <div class='card'>
                 <div class='label'>LATITUDE</div>
                 <div class='value'>{LatitudeString}</div>
                 <div class='label'>""</div>
               </div>
             </div>
+
+            
             <div class='col-sm-6'>
               <div class='card'>
                 <div class='label'>LONGITUDE</div>
                 <div class='value'>{LongitudeString}</div>
                 <div class='label'>""</div>
               </div>
-            </div>
-            <div class='col-sm-6'>
+            </div> */}
+
+            {/* <div class='col-sm-6'>
               <div class='card'>
                 <div class='label'>DATE</div>
                 <div class='value'>{DateString}</div>
-                {/* <div class="label"></div> */}
+                <div class="label"></div>
               </div>
             </div>
             <div class='col-sm-6'>
               <div class='card'>
                 <div class='label'>TIME</div>
                 <div class='value'>{TimeString}</div>
-                {/* <div class="label">%</div> */}
+                <div class="label">%</div>
               </div>
-            </div>
+            </div> */}
           </div>
-        </div>
-        <ChartData data={HeartRate} />
-        <ChartData data={SpO2} />
+        
       </div>
     </>
   );

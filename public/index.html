@@ -3,7 +3,7 @@
   <head>
     <title>P.CARE</title>
     <meta charset="utf-8" />
-    <link rel=""stylesheet" href="App.css">
+    <link rel="stylesheet" href="App.css">
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
@@ -11,6 +11,11 @@
       name="description"
       content="Web site created using create-react-app"
     />
+
+
+
+
+
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -53,19 +58,17 @@
 			margin-bottom: 20px;
       padding-top: 30px;
       padding-bottom: 30px;
-      max-width: 960px;
-      max-height: 1000px;
       margin: 0 auto;
-      padding: 5px;
-			font-size: 24px;
+			font-size: 40px;
 			color: #444;
-			height: 50%;
-      width: 50%;
+			height: 200px;
+      width: 900px;
 			display: flex;
-			flex-direction: column;
-      flex-basis: 500px;
+			flex-direction: row;
 			align-items: center;
 			justify-content: center;
+      gap: 10px;
+      
 		}
 		
 		.card hr {
@@ -77,7 +80,7 @@
 		}
 		
 		.card .label {
-			font-size: 18px;
+			font-size: 50px;
 			font-weight: bold;
 			color: #666;
 			margin-bottom: 10px;
@@ -91,12 +94,37 @@
 			color:  #333;
 			margin-bottom: 10px;
 		}
+
+
+  .container{
+  display: flex ;
+  flex-direction: row;
+  justify-content: center;
+  gap: 200px;
+}
+
+.heath_info{
+  display: flex;
+  flex-direction: column;
+  margin: 0 ;
+  gap: 50px;
+ 
+}
+
+.chart{
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  
+}
+
+
 	</style>
   </head>
   <body>
-    
-  
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -108,8 +136,10 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVpHi4SJY3p9YZ4g6S+wnUZ+IcZksdQRVvoxMfooAo7s" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+  
+</body>
+
 </html>
