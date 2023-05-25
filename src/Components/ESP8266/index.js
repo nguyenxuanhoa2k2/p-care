@@ -48,42 +48,42 @@ const APPESP = () => {
         .catch((err) => {
           console.log(err);
         });
-      get(child(dbRef, 'LatitudeString'))
-        .then((data) => {
-          if (data.exists()) {
-            setLatitudeString(data.val());
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-      get(child(dbRef, 'LongitudeString'))
-        .then((data) => {
-          if (data.exists()) {
-            setLongitudeString(data.val());
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-      get(child(dbRef, 'DateString'))
-        .then((data) => {
-          if (data.exists()) {
-            setDateString(data.val());
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-      get(child(dbRef, 'TimeString'))
-        .then((data) => {
-          if (data.exists()) {
-            setTimeString(data.val());
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      // get(child(dbRef, 'LatitudeString'))
+      //   .then((data) => {
+      //     if (data.exists()) {
+      //       setLatitudeString(data.val());
+      //     }
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
+      // get(child(dbRef, 'LongitudeString'))
+      //   .then((data) => {
+      //     if (data.exists()) {
+      //       setLongitudeString(data.val());
+      //     }
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
+      // get(child(dbRef, 'DateString'))
+      //   .then((data) => {
+      //     if (data.exists()) {
+      //       setDateString(data.val());
+      //     }
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
+      // get(child(dbRef, 'TimeString'))
+      //   .then((data) => {
+      //     if (data.exists()) {
+      //       setTimeString(data.val());
+      //     }
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
     }, 1000);
 
     return () => clearInterval(id);
@@ -140,7 +140,7 @@ const APPESP = () => {
               </div>
             </div>
 
-            
+
             <div class='col-sm-6'>
               <div class='card'>
                 <div class='label'>LONGITUDE</div>
