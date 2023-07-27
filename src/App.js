@@ -1,18 +1,15 @@
 
 import APPESP from './Components/ESP8266';
-import Map from './Components/gps/main';
+import Navbar from './Components/Navbar/Navbar';
+import './App.css'
 
 function App() {
   return (
     <div>
+      <Navbar></Navbar>
       <div className="App">
       <APPESP/>
       </div>
-
-      <div className="App">
-      <Map/>
-      </div>
-   
 
     </div>
   );

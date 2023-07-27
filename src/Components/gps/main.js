@@ -1,4 +1,3 @@
-
 import { MapContainer, TileLayer, Marker, Popup  } from 'react-leaflet';
 import "../../index.css";
 import "leaflet/dist/leaflet.css";
@@ -7,6 +6,8 @@ import React from "react";
 import L from "leaflet"
 import { ref, child, get } from "firebase/database";
 import { database } from '../../utils/firebaseConfig';
+import Navbar from '../Navbar/Navbar';
+
 
 const markerIcon = new L.Icon({
   iconUrl: ("https://cdn-icons-png.flaticon.com/512/447/447031.png"),
@@ -16,53 +17,45 @@ const markerIcon = new L.Icon({
 
 
 const Map = () => {
-const dbRef = ref(database);
-  const [center, setCenter] = useState({lng:105.78737106544159, lat:20.98091894538312});
-  const ZOOM_LEVEL = 10;
-
-const [Latitude, setLatitude] = useState(0);
-const [Longitude, setLongitude] = useState(0);
+  const dbRef = ref(database);
+  const [center, setCenter] = useState({lng:105.78737106, lat:20.98091894});
+  const ZOOM_LEVEL = 20;
+  
+  const [Latitude, setLatitude] = useState(0);
+  const [Longitude, setLongitude] = useState(0);
 
       useEffect(() => {
         const id = setInterval(() => {
-          get(child(dbRef, 'LatitudeString'))
-            .then((data) => {
-              if (data.exists()) {
-                const dataArrayLatitude = Object.values(data.toJSON());
-                const dataArrayLatitudeFormat = dataArrayLatitude.map(
-                  (item, index) => {
-                    return {
-                      name: `Turn ${String(index + 1)}`,
-                      value: item,
-                    };
-                  }
-                );
-                setLatitude(dataArrayLatitudeFormat);
-              }
-            })
-            .catch((err) => {
-              console.log(err);
-            });
-            get(child(dbRef, 'LongitudeString'))
-            .then((data) => {
-              if (data.exists()) {
-                const dataArrayLongitude = Object.values(data.toJSON());
-                const dataArrayLongitudeFormat = dataArrayLongitude.map(
-                  (item, index) => {
-                    return {
-                      name: `Turn ${String(index + 1)}`,
-                      value: item,
-                    };
-                  }
-                );
-                setLongitude(dataArrayLongitudeFormat);
-              }
-            })
-            .catch((err) => {
-              console.log(err);
-            });
+          get(child(dbRef, 'Latitude'))
+        .then((data) => {
+          if (data.exists()) {
+            setLatitude(data.val())
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
 
-            setCenter({lng:Longitude,lat:Latitude})
+        get(child(dbRef, 'Longitude'))
+        .then((data) => {
+          if (data.exists()) {
+            setLongitude(data.val())
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
+
+          if (Longitude === 0 && Latitude === 0) {
+            return <div>Loading...</div>
+          } else {
+              setCenter({lng:Longitude,lat:Latitude})
+              
+            }
+
+
+
   // get(child(dbRef, `gps_data`))
   //   .then((snapshot) => {
   //     if (snapshot.exists()) {
@@ -105,7 +98,7 @@ const [Longitude, setLongitude] = useState(0);
   //   console.error(error);
   // });
 
-    }, 5000);
+    }, 1000);
   
   
     return () => clearInterval(id);
@@ -116,7 +109,8 @@ const [Longitude, setLongitude] = useState(0);
 
   
   return(
-
+<div>
+  <Navbar></Navbar>
 
   <MapContainer 
     
@@ -135,7 +129,7 @@ const [Longitude, setLongitude] = useState(0);
         </Popup>
     </Marker>
   </MapContainer>
-  
+  </div>  
 );
 };
 

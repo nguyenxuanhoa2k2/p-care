@@ -1,20 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Map from './Components/gps/main';
+import BMI from './Components/BMI/Bmi';
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />
+  },
+
+  {
+    path: "GPS",
+    element: <Map/>
+  },
+
+  {
+    path: "BMI",
+    element: <BMI/>
+  },
+
+]);
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <div>
-    <React.StrictMode>
-    <App />
-    </React.StrictMode>
-
-  </div>
+  <RouterProvider router={router}/>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+

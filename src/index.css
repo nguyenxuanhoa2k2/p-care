@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: white;
-  /* color: 'red'; */
+  color: 'red';
 }
 
 code {
@@ -16,6 +16,6 @@ code {
 
 .leaflet-container{
   height: 100vh;
-  margin: 50px 400px 50px 400px; 
+  margin: 50px 200px 50px 200px; 
 }
  
