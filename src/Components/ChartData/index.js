@@ -18,7 +18,7 @@ function ChartData({ data }) {
       data={data}
       margin={{
         top: 5,
-        right: 30,
+        right: 40,
         left: 20,
         bottom: 5,
       }}
